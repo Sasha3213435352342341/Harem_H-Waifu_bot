@@ -1,0 +1,83 @@
+{
+    "title": "FAQ",
+    "faqs": [
+        {
+            "question": "Topic 1",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "This is how text is created"
+                },
+                {
+                    "type": "image",
+                    "src": "img/test.jpg",
+                    "alt": "This is how an image is created"
+                },
+                {
+                    "type": "text",
+                    "value": "This is how text is created after the image"
+                }
+            ]
+        },
+        {
+            "question": "Topic 2",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "This is how text is created"
+                },
+                {
+                    "type": "image",
+                    "src": "img/test.jpg",
+                    "alt": "This is how an image is created"
+                }
+            ]
+        },
+        {
+            "question": "Topic 3",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "This is how text is created"
+                }
+            ]
+        },
+        {
+            "question": "Topic 4",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "This is how text is created"
+                },
+                {
+                    "type": "nested",
+                    "subquestions": [
+                        {
+                            "subquestion": "This is how you can create headings with nested content",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "value": "This is how content with text is created"
+                                }
+                            ]
+                        },
+                        {
+                            "subquestion": "Can I undo the changes?",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "value": "This is how content with text and an image is created"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "img/test.jpg",
+                                    "alt": "This is how an image is created"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
