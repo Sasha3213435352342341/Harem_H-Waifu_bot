@@ -29,6 +29,11 @@ body.active ::-webkit-scrollbar {
     border: 2px solid #ff3887;
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e6005c;
+    cursor: pointer;
+}
+
 .faq-container {
     max-width: 800px;
     margin: 50px auto;
@@ -77,7 +82,7 @@ body.active ::-webkit-scrollbar {
 
 .faq-item {
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     border: 2px solid transparent;
     background: linear-gradient(#eee, #eee 0) padding-box,
@@ -97,11 +102,12 @@ body.active ::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     border-radius: 7px;
-    transition: background-color 0.3s ease, box-shadow 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .faq-question:hover {
     background: #e6005c;
+
 }
 
 .faq-answer {
@@ -111,13 +117,14 @@ body.active ::-webkit-scrollbar {
     color: #333;
     padding: 0;
     opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
 }
 
 .faq-answer.open {
     max-height: 10000px;
     padding: 15px;
     opacity: 1;
+    transform: scaleY(1);
 }
 
 .faq-answer img {
@@ -126,18 +133,17 @@ body.active ::-webkit-scrollbar {
     margin: 15px 0;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    transform: scale(1);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .faq-answer img:hover {
-    transform: scale(1.01);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .faq-answer p {
     margin: 10px 0;
     line-height: 1.5;
+    animation: slideIn 0.5s ease forwards;
 }
 
 .faq-icon {
@@ -160,15 +166,12 @@ body.active ::-webkit-scrollbar {
     cursor: pointer;
     margin: 10px 0;
     color: #ff4d88;
+    animation: fadeIn 0.5s ease backwards;
 }
 
 .nested-answer {
     display: none;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #e6005c;
-    cursor: pointer;
+    animation: slideIn 0.5s ease forwards;
 }
 
 .nested-answer.open {
@@ -186,10 +189,12 @@ body.active ::-webkit-scrollbar {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: none;
+    transform: scale(1);
 }
 
 .faq-question.sticky:hover {
     background: #e6005c;
+    transform: scale(1.01);
 }
 
 @keyframes fadeIn {
@@ -200,6 +205,17 @@ body.active ::-webkit-scrollbar {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
